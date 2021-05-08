@@ -4,7 +4,13 @@ import axios from 'axios';
 import ProductTableRow from './ProductTableRow';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
 
+toast.configure()
+const notify = ()=>{ 
+    toast('Order Placed',{position: toast.POSITION.TOP_CENTER})
+}
 class MyKart extends Component {
   
     constructor(props) {
@@ -75,7 +81,7 @@ class MyKart extends Component {
                         {this.DataTable()}
                     </tbody>
                 </Table>
-                <Button onClick={this.placeOrder} size="sm" variant="danger" style={{marginLeft:"40%"}}>PLACE ORDER</Button>
+                <Button onClick={this.placeOrder,notify}  size="sm" style={{marginLeft:"40%"}}>PLACE ORDER</Button>
             </div>
         )
     }

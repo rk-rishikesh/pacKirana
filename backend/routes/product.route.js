@@ -39,6 +39,8 @@ router.route('/editProduct/:id').get((req, res) => {
   })
 })
 
+
+
 // Delete Product
 router.route('/deleteProduct/:id').delete((req, res, next) => {
   productSchema.findByIdAndRemove(req.params.id, (error, data) => {
@@ -51,5 +53,18 @@ router.route('/deleteProduct/:id').delete((req, res, next) => {
     }
   })
 })
+
+router.route('/del').delete((req, res, next) => {
+  productSchema.findByIdAndRemove(req.params.id, (error, data) => {
+    if (error) {
+      return next(error);
+    } else {
+      res.status(200).json({
+        msg: data
+      })
+    }
+  })
+})
+
 
 module.exports = router;

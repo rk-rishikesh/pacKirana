@@ -4,21 +4,18 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from 'react-bootstrap/Button';
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import MyKart from "./components/MyKart/MyKart";
 import HomePage from "./components/HomePage/HomePage";
 import Admin from "./components/Admin/Admin";
+import Shopkeeper from "./components/HomePage/Shopkeeper";
+import MyOrders from "./components/Shop/MyOrders";
 
-// 1. Login
 
-// 2. Customer
-// Name thik kr dena
-// Rename My Kart to wishlist
-// New components : My Orders - Order ID Order status
 // 3. Shopkeeper
-// Add products Form at roiute "/"
 // Add Packed Order button yeh button dabi toh customer ke isme status change honga
 // In order .js
 // Add buuton below table ok
@@ -29,14 +26,47 @@ class App extends Component{
   constructor(props){
     super(props)
     this.state = {
-      shopkeeper : true,
+      shopkeeper : false,
       customer : false,
     }
+    this.handleClick = this.handleClick.bind(this);
+    this.handleClick1 = this.handleClick1.bind(this);
+    
   }
+
+  handleClick() {
+    this.setState(state => ({
+      shopkeeper: true
+    }));
+  }
+
+  handleClick1() {
+    this.setState(state => ({
+      customer: true
+    }));
+  }
+
   render(){
     if(!this.state.shopkeeper && !this.state.customer){
       return(
-        <h1>Login</h1>
+        <div className="not-found">
+            <form>
+                <h1 style={{marginLeft:"20%",marginTop:"3%"}}>Sign In</h1>
+
+                <div className="form-group" style={{width:"50%",marginLeft:"20%",marginTop:"3%"}}>
+                    <label>Email address</label>
+                    <input type="email" className="form-control" placeholder="Enter email" />
+                </div>
+
+                <div className="form-group sizepagepass" style={{width:"50%",marginLeft:"20%"}}>
+                    <label className="nameinp">Password</label>
+                    <input type="password" className="form-control inp" placeholder="Enter password" />
+                </div>
+                <Button onClick={this.handleClick}  size="sm"  style={{marginLeft:"35%"}}>Login as Shopkeeper</Button>
+                <Button onClick={this.handleClick1}  size="sm"  style={{marginLeft:"3%"}}>Login as Customer</Button>
+                
+            </form>
+            </div>
       )
     }
     else{
@@ -50,7 +80,6 @@ class App extends Component{
                     <Navbar.Brand>
                         PACKIRANA
                     </Navbar.Brand>
-        
                     <Nav className="justify-content-end">
                       <Nav>
                         <Link to={"/admin"} className="nav-link">
@@ -61,12 +90,12 @@ class App extends Component{
                   </Container>
                 </Navbar>
               </header>
-        
               <Container>
                 <Row>
                   <Col md={12}>
                     <div className="wrapper">
                       <Switch>
+                        <Route exact path='/' component={Shopkeeper} />  
                         <Route path="/admin" component={Admin} />
                       </Switch>
                     </div>
@@ -93,10 +122,15 @@ class App extends Component{
                     <Nav className="justify-content-end">
                       <Nav>
                         <Link to={"/myKart"} className="nav-link">
-                          MY KART
+                          WISHLIST
                         </Link>
                       </Nav>
                       <Nav>
+                        <Link to={"/myorders"} className="nav-link">
+                          MY ORDERS
+                        </Link>
+                      </Nav>
+                      <Nav style={{ fontFamily: "monospace",color:"white",paddingTop:"2.8%"}}>
                           RISHIKESH KALE
                       </Nav>
                     </Nav>
@@ -113,6 +147,7 @@ class App extends Component{
                         <Route path="/products" component={HomePage} />
                         
                         <Route path="/myKart" component={MyKart} />
+                        <Route path="/myorders" component={MyOrders} />
                       </Switch>
                     </div>
                   </Col>
