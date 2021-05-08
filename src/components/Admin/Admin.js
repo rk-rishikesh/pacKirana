@@ -21,11 +21,6 @@ class Admin extends Component {
                             <td>Rishikesh Kale</td>
                             <Link to={'/order/'+ 1}><button className = "button">View Order</button></Link>
                         </tr>
-                        <tr >
-                            <td>2</td>
-                            <td>Shreyas Kale</td>
-                            <Link to={'/order/'+ 2}><button className = "button">View Order</button></Link>
-                        </tr>
                         </table>
                 </div>
                 <div>

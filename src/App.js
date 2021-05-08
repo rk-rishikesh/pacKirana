@@ -11,12 +11,25 @@ import MyKart from "./components/MyKart/MyKart";
 import HomePage from "./components/HomePage/HomePage";
 import Admin from "./components/Admin/Admin";
 
+// 1. Login
+
+// 2. Customer
+// Name thik kr dena
+// Rename My Kart to wishlist
+// New components : My Orders - Order ID Order status
+// 3. Shopkeeper
+// Add products Form at roiute "/"
+// Add Packed Order button yeh button dabi toh customer ke isme status change honga
+// In order .js
+// Add buuton below table ok
+// Add Packed Order button yeh button dabi toh orders packed list me jayeg
+
 class App extends Component{
   
   constructor(props){
     super(props)
     this.state = {
-      shopkeeper : false,
+      shopkeeper : true,
       customer : false,
     }
   }
@@ -82,6 +95,9 @@ class App extends Component{
                         <Link to={"/myKart"} className="nav-link">
                           MY KART
                         </Link>
+                      </Nav>
+                      <Nav>
+                          RISHIKESH KALE
                       </Nav>
                     </Nav>
                   </Container>

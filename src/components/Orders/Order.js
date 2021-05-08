@@ -87,6 +87,8 @@ class Order extends Component {
             }
         ]
 
+        ///empoty array packed order array
+        
         const index = this.props.match.params.id
         const orderList = orders[index].items
         console.log(index)
