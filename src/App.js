@@ -15,12 +15,6 @@ import Shopkeeper from "./components/HomePage/Shopkeeper";
 import MyOrders from "./components/Shop/MyOrders";
 
 
-// 3. Shopkeeper
-// Add Packed Order button yeh button dabi toh customer ke isme status change honga
-// In order .js
-// Add buuton below table ok
-// Add Packed Order button yeh button dabi toh orders packed list me jayeg
-
 class App extends Component{
   
   constructor(props){

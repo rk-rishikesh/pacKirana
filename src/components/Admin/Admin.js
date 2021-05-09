@@ -4,25 +4,15 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Order from '../Orders/Order';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
 
+toast.configure()
+const notify = ()=>{ 
+    toast('Order Packed',{position: toast.POSITION.TOP_CENTER})
+}
 
-const green = '#39D1B4';
 class Admin extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-          buttcolor : green,
-        }
-        this.handleClick = this.handleClick.bind(this);
-        
-      }
-    
-      handleClick() {
-        this.setState(state => ({
-          buttcolor : green
-        }));
-      }
-
     
 
     render() {
@@ -42,7 +32,7 @@ class Admin extends Component {
                             <td>1</td>
                             <td>Rishikesh Kale</td>
                             <td><Link to={'/order/'+ 1}><button className = "button">View Order</button></Link></td>
-                            <td><Button size="sm" onClick={this.handleClick} style={{marginLeft:"25%"}}>Packed</Button></td>
+                            <td><Button size="sm" onClick={this.placeOrder,notify} style={{marginLeft:"25%"}}>Packed</Button></td>
                         </tr>
                         </table>
                 </div>

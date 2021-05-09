@@ -41,8 +41,8 @@ class Order extends Component {
                     },
                     {
                         id:3,
-                        name:"Jaggery",
-                        rate: "Rs 15/kg"
+                        name:"Wheat",
+                        rate: "Rs 34/kg"
                     }
                 ]
             },

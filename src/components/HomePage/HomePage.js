@@ -75,32 +75,32 @@ class HomePage extends Component {
                 <div className = "box">
                 <Link to={'/shop/'+ 0}><img src={ShopIcon}/></Link>                  
                     <div className="container">
-                        <h4><b>{this.state.shop1.name}</b></h4>
-                        <p>{this.state.shop1.address}</p>
+                        <h4><b>Balaji Kirana Bhandar</b></h4>
+                        <p>Nandanvan, Nagpur</p>
                     </div>            
                 </div>
                 {/* Shop 2 */}
                 <div className = "box">
                 <Link to={'/shop/'+ 1}><img src={ShopIcon}/></Link>                                      
                     <div className="container">
-                        <h4><b>{this.state.shop2.name}</b></h4>
-                        <p>{this.state.shop2.address}</p>
+                        <h4><b>Raju Kirana</b></h4>
+                        <p>Nandanvan, Nagpur</p>
                     </div>            
                 </div>
                 {/* Shop 3 */}
                 <div className = "box">
                 <Link to={'/shop/'+ 2}><img src={ShopIcon}/></Link>                   
                     <div className="container">
-                        <h4><b>{this.state.shop3.name}</b></h4>
-                        <p>{this.state.shop3.address}</p>
+                        <h4><b>Rashan Bhandar</b></h4>
+                        <p>Dharampeth, Nagpur</p>
                     </div>            
                 </div>
                 {/* Shop  */}
                 <div className = "box">
                 <Link to={'/shop/'+ 3}><img src={ShopIcon}/></Link>                  
                     <div className="container">
-                        <h4><b>{this.state.shop4.name}</b></h4>
-                        <p>{this.state.shop4.address}</p>
+                        <h4><b>Daily Needs</b></h4>
+                        <p>Laxmi Nagar, Nagpur</p>
                     </div>            
                 </div>
                 <Switch>

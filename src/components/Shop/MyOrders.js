@@ -19,7 +19,7 @@ export class MyOrders extends Component {
                     <tbody>
               <tr>
                 <td>1</td>
-                <td>Pending</td>
+                <td>Order Pending</td>
                 
               </tr>
           </tbody>
